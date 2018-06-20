@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
+* {
+  margin: 0;
+  padding: 0;
+}
+  body {
+    font-family: Oswald;
+    font-size: 1.5vw;
+    background: url("https://i.pinimg.com/originals/f1/7c/68/f17c68ed8807bf42744dbafba6f6a10b.jpg") no-repeat;
+    background-size: cover;
+    color: rgb(41, 25, 84);
+    box-sizing: border-box;
+}
+header {
+  max-width: 75%;
+  margin: 40px auto 25px;
+  padding: 20px 0;
+  border-radius: 10px;
+  color: rgb(191, 230, 251);
+  background: rgba(106, 106, 206, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 3vw;
+  border-bottom: 2px solid rgb(226, 255, 253);
+  color: rgb(176, 239, 244);
+}
+form {
+  max-width: 75%;
+  margin: auto;
+  padding: 2rem 0;
+  background: rgb(170, 193, 232, 0.4);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row {
+  width: 45%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input {
+  width: 75%;
+  height: 30px;
+  background: rgba(106, 106, 206, 0.45);
+  border:  1px solid rgba(106, 106, 206, 0.45);
+  padding: 0 0.5rem;
+  outline: none;
+  color: rgb(201, 240, 251);
+}
+::placeholder {
+  color: rgb(201, 240, 251);
+}
+.dropdown-box {
+  align-items: center;
+}
+select {
+  height: 30px;
+  width: 81%;
+  background: rgba(187, 190, 257, 0.9);
+  border:  1px solid rgba(106, 106, 206, 0.45);
+  outline: none;
+}
+.radio-box div {
+  width: 60%;
+  background: rgba(187, 190, 257, 0.9);
+  border:  1px solid rgba(106, 106, 206, 0.45);
+  font-size: 0.75em;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+
+.news input, .races input {
+  width: 15%;
+  height: 20px;
+  margin-top: 0.5vw;
+  cursor: pointer;
+}
+.news span {
+ display: flex;
+ align-items: center;
+}
+.checkbox {
+  flex-direction: column;
+  align-items: center;
+}
+.races {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: rgba(187, 190, 257, 0.9);
+  border:  1px solid rgba(106, 106, 206, 0.45);
+  font-size: 0.75em;
+  margin-top: 10px;
+}
+textarea {
+  background: rgba(106, 106, 206, 0.45);
+  border:  1px solid rgba(106, 106, 206, 0.45);
+  outline: none;
+  resize:none;
+  color: rgb(201, 240, 251);
+}
+#submit {
+  width: 20%;
+  height: 50px;
+  cursor: pointer;
+  background: rgba(173, 244, 244, 0.65);
+  border:  1px solid rgba(173, 244, 244, 0.65);
+  font-size: 1.4vw;
+  color: #214e72;
+  margin-top: 20px;
+}
+#submit:hover {
+  font-weight: bold;
+}

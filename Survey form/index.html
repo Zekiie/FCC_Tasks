@@ -1,0 +1,70 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Survey Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+ </head>
+<header>
+  <h1 id="title">How did you know about Middle-earth?</h1>
+  <p id='description'>Tell us about your first meeting with Tolkien world.</p>
+</header>
+  <form id="survey-form">
+    <div class='row'>
+    <label for='name' id='name-label'>Name:</label> 
+    <input type='text' id='name' name='name' required="" placeholder="Name">
+    </div>
+    
+    <div class='row'>
+    <label for='email' id='email-label'>Emal:</label>  
+    <input type='email' id='email' name='email' placeholder="Email" required=''>
+     </div>
+    
+     <div class='row'>
+     <label for='Age' id='number-label'>Age:</label>  
+    <input type='number' id='number' name='number' min='1' max='110' placeholder="Age" reqired=''>
+    </div>
+    
+    <div class="dropdown-box row">
+      <label for='dropdown' id='dropdown-label'>Select the way, which helped you to know about Middle-earth:</label> 
+      <select id='dropdown'>
+        <option value="" disabled selected>Select an option</option>
+        <option>Where is Middle-earth at all?</option>
+        <option>See a lot of mentions about Middle-earth </option>
+         <option>Read books by J.R.R. Tolkien</option>
+        <option>Saw movies by P. Jackson</option>
+      </select>       
+    </div>
+    
+    <div class="radio-box row">
+      <label for="gender" id="gender"> Do you want to know more about Middle-Earth? </label>
+      <div class='news'>
+        <span><input type='radio' name='radio' value='absolute'> Yes, it's my passion</span>
+        <span> <input type='radio' name='radio' value="good"> It'll be great</span>
+        <span> <input type='radio' name='radio' value="know everything"> I've already know everything</span>
+        <span> <input type='radio' name='radio' value="not bad"> Why not?</span>
+        <span> <input type='radio' name='radio' value="No"> No, not interesting at all</span>    
+      </div>   
+    </div>  
+    
+    <div class="row checkbox">
+      <label for="checkbox" id="race">What is your favourite race?</label>
+      <div class='races'>
+        <input type="checkbox" name='race' value="Ainur"> Ainur
+        <input type="checkbox" name='race' value="Elves"> Elves
+        <input type="checkbox" name='race' value="Men"> Men
+        <input type="checkbox" name='race' value="Dwarves"> Dwarves
+        <input type="checkbox" name='race' value="Hobbits"> Hobbits
+        <input type="checkbox" name='race' value="Ents"> Ents
+      </div>
+    </div>
+    
+    <div class="row">
+      <label for="comments">What is most important for your in Middle-earth?</label>
+      <textarea rows="8" cols="40" placeholder="Your comments here...">
+      </textarea>
+    </div>  
+    
+    <input type="submit" id='submit' value='Send Eagles'>
+  </form>  
+  </html>
