@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+<nav class="nav" id="navbar">
+    <header class='nav__head'>Vue.js Documentation</header>
+    <ul class='nav__menu'>
+        <a class='nav-link' href="#Introduction" rel="internal">
+            <li class='nav-item'>Introduction</li>
+        </a>
+        <a class='nav-link' href="#Getting_Started">
+            <li class='nav-item'>Getting Started</li>
+        </a>
+        <a class='nav-link' href="#Declarative_Rendering">
+            <li class='nav-item'>Declarative Rendering</li>
+        </a>
+        <a class='nav-link' href="#Conditionals_and_Loops">
+            <li class='nav-item'>Conditionals and Loops</li>
+        </a>
+        <a class='nav-link' href="#Handling_User_Input">
+            <li class='nav-item'>Handling User Input</li>
+        </a>
+        <a class='nav-link' href="#Creating_a_Vue_Instance">
+            <li class='nav-item'>Creating a Vue Instance</li>
+        </a>
+        <a class='nav-link' href="#Listening_to_Events">
+            <li class='nav-item'>Listening to Events</li>
+        </a>
+        <a class='nav-link' href="#Key_Modifiers">
+            <li class='nav-item'>Key Modifiers</li>
+        </a>
+        <a class='nav-link' href="#Ready_for_More?">
+            <li class='nav-item'>Ready for More?</li>
+        </a>
+    </ul>
+</nav>
+<main class='main' id="main-doc">
+    <section class="main-section" id='Introduction'>
+        <header>Introduction</header>
+        <article>
+            <p>Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other
+                monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core
+                library is focused on the view layer only, and is easy to pick up and integrate with other libraries or
+                existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated
+                Single-Page.</p>
+            <p>Vue does not support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8.
+                However it supports all ECMAScript 5 compliant browsers.</p>
+            <p>Vue provides a variety of ways to apply transition effects when items are inserted, updated, or removed
+                from the DOM. This includes tools to:</p>
+            <li>automatically apply classes for CSS transitions and animations</li>
+            <li>integrate third-party CSS animation libraries, such as Animate.css</li>
+            <li>use JavaScript to directly manipulate the DOM during transition hooks</li>
+            <li>integrate third-party JavaScript animation libraries, such as Velocity.js</li>
+        </article>
+    </section>
+
+    <section class="main-section" id="Getting_Started">
+        <header>Getting Started</header>
+        <article>
+            <p>
+                The easiest way to try out Vue.js is using the JSFiddle Hello World example. Feel free to open it in
+                another tab and follow along as we go through some basic examples. Or, you can create an index.html file
+                and include Vue with:
+            </p>
+
+            <code>
+						<pre>
+
+	&lt;!-- development version, includes helpful console warnings --&gt;
+	&lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+					</pre>
+            </code>
+
+            <p>The Installation page provides more options of installing Vue. Note: Do not recommend that beginners
+                start with vue-cli, especially if you are not yet familiar with Node.js-based build tools.</p>
+            <p>If you prefer something more interactive, you can also check out this tutorial series on Scrimba, which
+                gives you a mix of screencast and code playground that you can pause and play around with anytime.</p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Declarative_Rendering">
+        <header>Declarative Rendering</header>
+        <article>
+            <p>At the core of Vue.js is a system that enables us to declaratively render data to the DOM using
+                straightforward template syntax:</p>
+            <code>
+					<pre>
+
+	&lt;div id="app"&gt;
+		{{ message }}
+	&lt;/div&gt;
+					</pre>
+                <pre>
+
+	var app = new Vue({
+	   	 el: '#app',
+            	 data: {
+         	    message: 'Hello Vue!'
+           	 }
+    	 })
+                </pre>
+            </code>
+            <p>We have already created our very first Vue app! This looks pretty similar to rendering a string template,
+                but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is
+                now reactive. How do we know? Open your browser’s JavaScript console (right now, on this page) and set
+                app.message to a different value. You should see the rendered example above update accordingly.</p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Conditionals_and_Loops">
+        <header>Conditionals and Loops</header>
+        <article>
+            <code>
+				<pre>
+
+	&lt;div id="app-3"&gt;  
+	   &lt;span v-if="seen"&gt;Now you see me&lt;/span&gt;
+	&lt;/div&gt;
+
+                </pre>
+                <pre>
+
+	var app = new Vue({
+  	   el: '#app',
+           data: {
+               seen: true
+           }
+         })
+                </pre>
+            </code>
+            <p>This example demonstrates that we can bind data to not only text and attributes, but also the structure
+                of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply
+                transition effects when elements are inserted/updated/removed by Vue.</p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Handling_User_Input">
+        <header>Handling User Input</header>
+        <article>
+            <p>To let users interact with your app, we can use the v-on directive to attach event listeners that invoke
+                methods on our Vue instances:</p>
+            <code>
+				<pre>
+
+	&lt;div id="app-5"&gt;  
+	   &lt;p&gt;{{ message }}&lt;/p&gt;  
+	   &lt;button v-on:click="reverseMessage"&gt;Reverse Message&lt;/button&gt;
+	&lt;/div&gt;
+
+	            </pre>
+                <pre>
+
+	var app = new Vue({
+  	   el: '#app',
+           data: {
+               message: 'Hello Vue!'
+           },
+           methods: {
+               reverseMessage: function () {
+                  this.message = this.message.split('').reverse().join('')
+               }
+           }
+         })
+				
+				</pre>
+            </code>
+            <p>Note that in this method we update the state of our app without touching the DOM - all DOM manipulations
+                are handled by Vue, and the code you write is focused on the underlying logic.</p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Creating_a_Vue_Instance">
+        <header>Creating a Vue Instance</header>
+        <article>
+            <p>Every Vue application starts by creating a new Vue instance with the Vue function:</p>
+            <code>
+					<pre>
+
+	var vm = new Vue({
+  	   // options
+	})
+
+				</pre>
+            </code>
+            <p>
+                Although not strictly associated with the MVVM pattern, Vue’s design was partly inspired by it. As a
+                convention, we often use the variable vm (short for ViewModel) to refer to our Vue instance.</p>
+            <p>When you create a Vue instance, you pass in an options object. The majority of this guide describes how
+                you can use these options to create your desired behavior. For reference, you can also browse the full
+                list of options in the API reference.</p>
+            <p>A Vue application consists of a root Vue instance created with new Vue, optionally organized into a tree
+                of nested, reusable components. For example, a todo app’s component tree might look like this:</p>
+            <pre>
+
+	Root Instance
+	└─ TodoList
+	   ├─ TodoItem
+	   │  ├─ DeleteTodoButton
+	   │  └─ EditTodoButton
+	   └─ TodoListFooter
+	      ├─ ClearTodosButton
+	      └─ TodoListStatistics
+
+				</pre>
+            <p>We’ll talk about the component system in detail later. For now, just know that all Vue components are
+                also Vue instances, and so accept the same options object (except for a few root-specific options).</p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Listening_to_Events">
+        <header>Listening to Events</header>
+        <article>
+            <p>We can use the<code> v-on </code> directive to listen to DOM events and run some JavaScript when they&rsquo;re
+                triggered.</p>
+            <p>The logic for many event handlers will be more complex though, so keeping your JavaScript in the value of
+                the<code> v-on </code>attribute isn&rsquo;t feasible. That&rsquo;s why<code> v-on </code>can also accept
+                the name of a method you&rsquo;d like to call.</p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Key_Modifiers">
+        <header>Key Modifiers</header>
+        <article>
+            <p>When listening for keyboard events, we often need to check for common key codes. Vue also allows adding
+                key modifiers for <code> v-on </code> when listening for key events:</p>
+            <code>
+					<pre>
+
+	&lt;!-- only call `vm.submit()` when the `keyCode` is 13 --&gt;
+	&lt;input v-on:keyup.13="submit"&gt;
+				</pre>
+            </code>
+            <p>Remembering all the keyCodes is a hassle, so Vue provides aliases for the most commonly used keys:</p>
+            <code>
+                <pre>
+
+	&lt;!-- same as above --&gt;
+	&lt;input v-on:keyup.13="submit"&gt;
+					
+	&lt;!-- also works for shorthand --&gt;
+	&lt;input @keyup.enter="submit"&gt;
+				</pre>
+            </code>
+            <p>Here&rsquo;s the full list of key modifier aliases:</p>
+            <li><code>.enter</code></li>
+            <li><code>.tab</code></li>
+            <li><code>.delete</code>(captures both &ldquo;Delete&rdquo; and &ldquo;Backspace&rdquo; keys)</li>
+            <li><code>.esc</code></li>
+            <li><code>.space</code></li>
+            <li><code>.up</code></li>
+            <li><code>.down</code></li>
+            <li><code>.left</code></li>
+            <li><code>.right</code></li>
+        </article>
+    </section>
+
+    <section class="main-section" id="Ready_for_More?">
+        <header>Ready for More?</header>
+        <article>
+            <p>We’ve briefly introduced the most basic features of Vue.js core - the rest of this guide will cover them
+                and other advanced features with much finer details, so make sure to read through it all!</p>
+            <a href="https://vuejs.org/v2/guide/installation.html">Install now</a>
+        </article>
+    </section>
+
+</main>
+</body>
+</html>
